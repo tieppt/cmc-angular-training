@@ -1,0 +1,44 @@
+.btn {
+  padding: 10px 20px;
+}
+.active {
+  color: orangered;
+  font-weight: 700;
+}
+
+.card {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  border: 1px solid crimson;
+
+  .front,
+  .back {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all .3s ease-in-out;
+    backface-visibility: hidden;
+  }
+  .back {
+    position: absolute;
+    background: #23262d;
+    top: 0;
+    left: 0;
+    transform: rotateY(-179.9deg);
+  }
+  .front {
+    background: red;
+    transform: rotateY(0);
+  }
+
+  &.active {
+    .front {
+      transform: rotateY(-179.9deg);
+    }
+    .back {
+      transform: rotateY(0);
+    }
+  }
+}

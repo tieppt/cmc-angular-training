@@ -1,0 +1,19 @@
+<p>
+  ng-classes works!
+</p>
+<div>
+  <button class="btn" [class.active]="isActive" (click)="isActive = !isActive">
+    Toggle class
+  </button>
+</div>
+
+<div>
+  <button class="btn" [ngClass]="{active: isActive}" (click)="isActive = !isActive">
+    Toggle class
+  </button>
+</div>
+
+<div class="card" [ngClass]="{active: isActive}">
+  <div class="back">Back</div>
+  <div class="front">Front</div>
+</div>

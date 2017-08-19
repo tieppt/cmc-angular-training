@@ -1,0 +1,18 @@
+<div>
+  <button (click)="show = !show">Toggle</button>
+</div>
+<div *ngIf="show; then displayBlock; else elseBlock">
+  Test
+</div>
+
+<ng-template #displayBlock>
+  <div>
+    <img [src]="image" alt="image">
+  </div>
+</ng-template>
+
+<ng-template #elseBlock>
+  <div>
+    Placeholder
+  </div>
+</ng-template>

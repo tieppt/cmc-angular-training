@@ -1,0 +1,6 @@
+:host {
+  display: block;
+}
+:host-context(.green) div {
+  background: green;
+}

@@ -1,0 +1,14 @@
+p {
+  font-size: 30px;
+  color: mediumvioletred;
+}
+:host {
+  display: block;
+  background: #ddd;
+}
+
+:host-context(.dark) {
+  p {
+    color: #23262d;
+  }
+}

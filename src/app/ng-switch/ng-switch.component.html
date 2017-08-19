@@ -1,0 +1,16 @@
+<div>
+  <button (click)="tabChange(1)">Tab 1</button>
+  <button (click)="tabChange(2)">Tab 2</button>
+  <button (click)="tabChange(3)">Tab 3</button>
+</div>
+<div [ngSwitch]="index">
+  <div *ngSwitchCase="1">
+    Lorem ipsum dolor sit lit. Blanditiis, quia!
+  </div>
+  <div *ngSwitchCase="2">
+    Blanditiis, quia!
+  </div>
+  <div *ngSwitchCase="3">
+    Lonsectetur adipisicing elit. Blanditiis, quia!
+  </div>
+</div>

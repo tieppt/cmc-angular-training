@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+:host(.pink) {
+  background: deeppink;
+}
+
+:host(.green) {
+  background: green;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+input.invalid {
+  border: 1px solid red;
+}

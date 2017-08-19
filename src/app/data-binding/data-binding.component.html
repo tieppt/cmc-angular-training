@@ -1,0 +1,13 @@
+<div>
+  <input type="text" [(ngModel)]="name">
+</div>
+<p>
+  {{ name }}
+</p>
+
+<div>
+  <input type="text" [value]="content" (change)="onChange($event)">
+</div>
+<p>
+  {{ content }}
+</p>

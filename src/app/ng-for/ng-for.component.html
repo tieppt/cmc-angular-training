@@ -1,0 +1,6 @@
+<button (click)="onClick()">Click me</button>
+<div *ngFor="let item of collection; trackBy: trackById;">
+  <ng-template [ngIf]="item">
+    {{ item?.id }} - {{ item?.name }}
+  </ng-template>
+</div>
