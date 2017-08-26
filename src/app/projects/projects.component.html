@@ -1,0 +1,12 @@
+<div>
+  <h3>List projects:</h3>
+  <tp-project-detail
+    *ngFor="let p of projectList"
+    [project]="p"
+    (onRemove)="oRemove($event)"
+    [member]="p.noMember"
+    (memberChange)="p.noMember = $event"
+  >
+
+  </tp-project-detail>
+</div>

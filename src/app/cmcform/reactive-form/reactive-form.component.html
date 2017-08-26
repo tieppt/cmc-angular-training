@@ -1,0 +1,49 @@
+<p>
+  reactive-form works!
+</p>
+<form [formGroup]="rform"
+      (ngSubmit)="onSubmit()"
+      novalidate
+>
+  <div>
+    <label>
+      Username
+      <input type="text" required
+        formControlName="username"
+      >
+    </label>
+    <p style="color: red;"
+       *ngIf="rform.get('username').touched
+          && rform.hasError('required', ['username'])
+        ">
+      Input is Required!
+    </p>
+  </div>
+  <div formGroupName="pwd">
+    <div>
+      <label>
+        Password
+        <input type="password"
+             formControlName="password"
+        >
+      </label>
+    </div>
+    <div>
+      <label>
+        Confirm Password
+        <input type="password"
+             formControlName="confirmPassword"
+        >
+      </label>
+    </div>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+  <pre>
+    {{ rform.value | json}}
+  </pre>
+  <pre>
+    {{ rform.get('username').errors | json}}
+  </pre>
+</form>

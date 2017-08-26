@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'tp-app-root',
@@ -7,9 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   inputValue = '1234';
-  constructor() {}
+
+  show = true;
+  lcArr = ['1', '3', '4'];
+  constructor(
+    public dataService: DataService
+  ) {
+    console.log(this.dataService.data);
+  }
   changeInput(event) {
     console.log(event);
     this.inputValue = event;
+  }
+  onClick() {
+    // this.show = !this.show;
+    this.lcArr = [...this.lcArr, '5'];
   }
 }

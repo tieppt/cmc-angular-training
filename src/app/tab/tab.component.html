@@ -1,0 +1,12 @@
+<div>
+  <ng-content></ng-content>
+</div>
+
+<div>
+  <p>Data Service Child</p>
+  <ul>
+    <li *ngFor="let i of dataService.data">
+      {{ i }}
+    </li>
+  </ul>
+</div>

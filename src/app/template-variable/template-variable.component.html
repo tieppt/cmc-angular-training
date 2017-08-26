@@ -1,0 +1,21 @@
+<p>
+  template-variable works!
+</p>
+
+<div style="padding: 20px;">
+  <input type="text" #work>
+  <button (click)="save(work.value)">
+    Add
+  </button>
+</div>
+<div>
+  Works:
+  <ul>
+    <li *ngFor="let work of works">
+      {{ work }}
+    </li>
+  </ul>
+</div>
+
+<canvas #chart width="880" height="1" style="width:880px;height:80px;margin:20px 40px;background:#ccc;"></canvas>
+<svg width="960" height="500"></svg>

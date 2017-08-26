@@ -1,0 +1,21 @@
+<ng-container *ngIf="project">
+  <p>
+    Project id: {{ project.id }}
+  </p>
+  <h3>
+    Project name: {{ project.name }}
+  </h3>
+  <ul>
+    <li *ngFor="let stack of project.techStack">
+      {{ stack }}
+    </li>
+  </ul>
+
+  <p>
+    Number of members: {{ project.noMember }}
+  </p>
+  <div>
+    <button (click)="remove()">Remove</button>
+  </div>
+</ng-container>
+

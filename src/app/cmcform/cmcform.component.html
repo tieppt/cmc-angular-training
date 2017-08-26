@@ -1,0 +1,47 @@
+<p>
+  Template Driven Form
+</p>
+
+<form #cmcForm="ngForm"
+      (ngSubmit)="onSubmit(cmcForm)"
+      novalidate
+>
+  <div>
+    <label>
+      Username
+      <input type="text" ngModel
+             name="username" required
+             #uname="ngModel">
+    </label>
+    <p style="color: red;"
+       *ngIf="uname?.touched && uname?.errors?.required">
+      Input is Required!
+    </p>
+  </div>
+  <div ngModelGroup="pwd">
+    <div>
+      <label>
+        Password
+        <input type="password" ngModel name="password">
+      </label>
+    </div>
+    <div>
+      <label>
+        Confirm Password
+        <input type="password" ngModel name="confirm-password">
+      </label>
+    </div>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+  <pre>
+    {{cmcForm.value | json}}
+  </pre>
+  <pre>
+    {{cmcForm.controls['username']?.errors | json}}
+  </pre>
+</form>
+
+=============
+<tp-reactive-form></tp-reactive-form>

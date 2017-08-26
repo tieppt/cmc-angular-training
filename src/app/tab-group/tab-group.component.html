@@ -1,0 +1,19 @@
+<ul>
+  <li *ngFor="let t of tabsTitle; index as i"
+    (click)="showTab(i)"
+  >
+    {{ t }}
+  </li>
+</ul>
+<ng-content select="tp-tab"></ng-content>
+
+
+<div>
+  <p>Data Service Parent</p>
+  <button (click)="remove()">Remove last item</button>
+  <ul>
+    <li *ngFor="let i of dataService.data">
+      {{ i }}
+    </li>
+  </ul>
+</div>

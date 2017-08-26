@@ -13,6 +13,15 @@ import { NgStyledModule } from './ng-styled/ng-styled.module';
 import { NgClassesModule } from './ng-classes/ng-classes.module';
 import { ValidateNumberDirective } from './validate-number.directive';
 import { TrimValueDirective } from './trim-value.directive';
+import { ProjectsModule } from './projects/projects.module';
+import { TemplateVariableModule } from './template-variable/template-variable.module';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { TabGroupComponent } from './tab-group/tab-group.component';
+import { TabComponent } from './tab/tab.component';
+import { DataService } from './data.service';
+import { CmcformModule } from './cmcform/cmcform.module';
+import { CounterService } from './counter.service';
+import { FnsDatePipe } from './fns-date.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +29,11 @@ import { TrimValueDirective } from './trim-value.directive';
     DataBindingComponent,
     IfThenElseComponent,
     ValidateNumberDirective,
-    TrimValueDirective
+    TrimValueDirective,
+    LifecycleComponent,
+    TabGroupComponent,
+    TabComponent,
+    FnsDatePipe
   ],
   imports: [
     BrowserModule,
@@ -30,7 +43,14 @@ import { TrimValueDirective } from './trim-value.directive';
     NgForModule,
     ViewEncapsulationModule,
     NgStyledModule,
-    NgClassesModule
+    NgClassesModule,
+    ProjectsModule,
+    TemplateVariableModule,
+    CmcformModule
+  ],
+  providers: [
+    {provide: DataService, useClass: DataService},
+    {provide: CounterService, useClass: CounterService}
   ],
   bootstrap: [AppComponent]
 })
